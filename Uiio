@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body { background-color: #ffe4e1; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: sans-serif; overflow: hidden; margin: 0; }
+        .container { text-align: center; }
+        h1 { color: #d02e77; }
+        .buttons { margin-top: 20px; }
+        button { padding: 15px 30px; font-size: 1.2rem; margin: 10px; cursor: pointer; border-radius: 10px; border: none; transition: 0.3s; }
+        #yesBtn { background-color: #ff69b4; color: white; }
+        #noBtn { background-color: #fb8da0; color: white; position: absolute; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpndWp3dzFieXp6Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iZCZjdD1n/c76IJLufpNUMo/giphy.gif" width="200">
+        <h1>Will you be my Valentine? ❤️</h1>
+        <div class="buttons">
+            <button id="yesBtn">Yes</button>
+            <button id="noBtn">No</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+
+        noBtn.addEventListener('touchstart', moveButton);
+        noBtn.addEventListener('mouseover', moveButton);
+
+        function moveButton() {
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+        }
+
+        yesBtn.addEventListener('click', () => {
+            document.querySelector('.container').innerHTML = "<h1>Yay! I Love You! ❤️</h1><img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHpndWp3dzFieXp6Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5Z3Z5JmVwPXYxX2ludGVybmFsX2dpZl9ieV9iZCZjdD1n/KztT2c4u8mYYUiCiS0/giphy.gif' width='250'>";
+        });
+    </script>
+</body>
+</html>
